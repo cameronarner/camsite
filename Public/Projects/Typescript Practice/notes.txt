@@ -1,0 +1,154 @@
+primitives: boolean, number, string
+also: bigint- allows larger neg and pos #s than number 
+and symbol- to create a globally unique identifier
+---
+Explicit Type Assignment: 
+        let firstName: string = "Cameron";
+    Implicit Type Assignment:
+        let firstName = "Cameron";
+---
+any=> a type that disables typechecking
+    ex. let v: any = true; v = "hello"; Math.round(v);
+        ^ does not throw an error bc v can be any type
+unknown=>safer, prevents unknown types from being used
+never=>throws and error whenever its defined
+---
+-> when creating an array you can specify type and prevent any other 
+type from being added w/out error
+readonly keyword can be added to prevent arrays from being changed.
+const names: readonly string[] = ["cameron"];
+names.push("danger"); ->ERROR: property 'push' does not exists on readonly type
+-TypeScript can infer the type of an array if it has values
+---
+tuple ~ a typed array with a pre-defined length and type for each index
+    let ourTuple: [number, boolean, string];
+    ourTuple: [5, false, 'hello world'];
+        -> if any types are wrong during initializtion an error will be thrown
+    -you can make readonly tuples, otherwise you can push anything after the initial
+    specified type values
+    ourTuple.push("yellow"); throws no errors
+    Named tuples
+    -> to provide context for values at each index
+    const point: [x: number, y: number] = [55.2, 41.4];
+    destructuring this:
+    const graph: [number, number] = [55.2, 41.3];
+    const [x, y] = graph;
+---
+Object Types:
+    syntax for typing objects
+    const cameron: { age: number, hairColor: string, major: string } = {
+        age: 19,
+        hairColor: "pink",
+        major: "CS"
+    };
+    types can also be infered if they are set
+    const cameron = {age: 19};
+    if you try to change my age to a string you get an erro
+    define an optional property => 
+    const cameron: {age: number, hairColor?: string} = {
+        age: 19
+    };
+    w/out ? this would throw error ^
+    cameron.hairColor: "red";
+    you can also use index signatures for object without defined property list
+    const nameAgeMap: {[index: string]: number } ={};
+    nameAgeMap.Jack = 25;
+    nameAgeMark = "fifty"; //error Type 'string' not assignable to type 'number'
+---
+Enums
+    special "class", representing a group of constants
+        Numeric -> default, will initialize first value to 0 and add one for the representing
+            -you can also initialize the first value to a different number and
+            it will incrememnt using that as a starting point
+            -you can also initialize all of the values to different numbers
+        Strings -> you can also initialize values to Strings
+---
+Type Aliases
+    -used to define a type with a custom name
+---
+Interfaces
+    -similar to type aliases but only apply to object types
+    -you can build off an old interfaces by using the keyword extends to 
+    add new properties
+---
+Union Types
+    -used when a value can be more than one type
+    -an error that could occur: you try to use toLowerCase on a type that
+    could be a string or number
+---
+Functions
+    - the type of value returned can be explicitly defined
+    ex. function funcName(): <return type> { ... }
+    - if the return type is not defined, it will be inferred
+    - use void as return type if function doesn't return a value
+    - parameter types are defined as well, if not will be "any" as default
+    - you can use the '?' to indicate an optional parameter
+    - you can set default values for parameters 
+        function funcName(par1: number, par2: number = 10){...}
+    - for array parameters you can use rest to set the rest of the types
+    - you can also seperately define the function type with an alias
+---
+Casting
+    - process of overriding a type
+    - you can use 'as' to typecast a variable
+    - you can also use '<>' to cast
+    Force Casting
+    - to override errors, cast to unknown then to a target type
+---
+Classes
+    - TypeScript adds types and visibility modifyers to JavaScript Classes
+    - members are typed similar to variables
+    - you can specify member visibility as public/private/protected
+    - public can be accessed anywhere, private only accessible from members
+    in the class, and protected allows access to the class member and any that inherit it
+    - keyword: this in this context refers to the instance of the class
+    - you can also set class members with the keyword rto prevent it from being changed
+    - you can use interfaces to define the type a class must eadonly, follow 
+    through the implemets keyword 
+        interface Shape {
+            getArea: () => number;
+        }
+        class Rectangle implements Shape{
+            public constructor(protected readonly width: number, protected readonly height: number)  {}
+
+            public getArea(): number {
+                return this.width * this.height;
+            }
+        }
+    - you can use extends with classes to inherit members and build, only for one
+            - with this you can use override to change the members and use the same name to mean
+            something else
+    - using the abstract keyword you can designate a member to use in other classes
+    without needing to implement them all in inheritor
+---
+Generics
+    - make it easier to write reusable code
+    - you can make type variables without explicitly defining their types
+    - you can use them for functions, classes, type aliases, default values, and extends
+---
+Utility types
+    - Partial = changes all the properties in an object to be optional
+    let partPoint: Partial<Point> = {};
+    - Required = changes all the properties in an object to be Required
+    - Record is a shortcut to define an object with a specific key and value type
+        Record<string, number> is equivalent to { [key: string] : number}
+    - omit removes keys from an object type, meaning they cannot be defined
+    - Pick removes all buy the specified keys
+    - exclude removes types from a Union
+        type Primitive = string | number | boolean
+        const value: Exclude<Primitive, string> = true; //can't be a string
+    - ReturnType extracts return type from function
+    - Parameters extracts these form a function type as an array
+    - Readonly used to create a new type where all properties cannot be 
+    modified after they've been assigned a value
+---
+Keyof
+    - keyword to extrace the key type from an object type
+---
+Null & Undefined
+    - null and undefined are primitive types can be used like string
+    - you can access properties on an object that may or may not exist use ?. operator
+    Nullish Coalescence ~ allows fallback when dealing with null or undefined
+        -> you can use with the ?? operator
+Template Literal Types
+    can be used to create more precise types using ``

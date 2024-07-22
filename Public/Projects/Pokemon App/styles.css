@@ -1,0 +1,78 @@
+*{
+    background-color: SteelBlue;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  header {
+    color: Yellow;
+    background-color: #3b4cca;
+    width: 190px;
+    display: inline-block;
+    margin-top: 70px;
+    border: 2px solid red;
+    font-size: 30px;
+  }
+  
+  input{
+    background-color: white;
+  }
+  
+  button{
+    background-color: yellow;
+    color: royalblue;
+  }
+  
+  p{
+    color: yellow;
+    margin-bottom: 5px;
+    margin-top: 25px;
+  }
+  
+  #results, #display, #labels{
+    height: 60%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    background-color: navy;
+    border-radius: 25px;
+  }
+  
+  #display > div{
+    background-color: navy;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    color: white;
+  }
+  img{
+    background-color: navy;
+  }
+  #types > p{
+    background-color: limegreen;
+    display: inline-block;
+    padding: 5px;
+    outline: 1px solid black;
+    border-radius: 10px;
+  }
+  
+  .inline{
+    display: inline-block;
+    padding: 0px;
+  }
+  
+  td{
+    background-color: navy;
+    color: yellow;
+  }
+  #display{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  table{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
