@@ -1,0 +1,80 @@
+pp, body{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+}
+
+.drum-pad{
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+#drum-machine{
+  display: grid;
+  column-gap: 25px;
+  grid-template-columns: 200px, auto, auto, auto, auto;
+  grid-template-rows: auto, auto, auto;
+  background-color: black;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.button-panel{
+  padding: 15px;
+  grid-area: 1 / 1 / span 3 / span 3;
+  background-color: grey;
+  border-radius: 10px;
+}
+
+#display{
+  grid-area: 1 / 5 / span 1 / span 2;
+  background-color: grey;
+  width: 135px;
+  height: 65px;
+  border-radius: 6px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 22px;
+}
+
+
+
+.control-panel{
+  grid-area: 3 / 5 / span 1 / span 2;
+  background-color: grey;
+  width: 125px;
+  height: 65px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+#Q{
+  background-color: rgb(169, 101, 233);
+}
+#W{
+  background-color: rgb(180, 65, 180);
+}
+#E{
+  background-color: rgb(240, 125, 186);
+}
+#A{
+  background-color: rgb(144, 242, 209);
+}
+#S{
+  background-color: rgb(104, 242, 242);
+}
+#D{
+  background-color: rgb(98, 202, 236);
+}
+#Z{
+  background-color: rgb(228, 228, 99);
+}
+#X{
+  background-color: rgb(235, 197, 92);
+}
+#C{
+  background-color: rgb(236, 142, 95);
+}

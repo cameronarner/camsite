@@ -1,86 +1,148 @@
+:root{
+    --color1: #D8FFF8;
+    --color2: #D4C1F1;
+    --color3: #5E29AD;
+    --color4: #ADCEF9;
+    font-family: "Kaisei HarunoUmi";
+    color: white;
+}
 body{
-    margin: 0px;
-    height: 100vh;
+    background-image: url("mesh-gradient1.png");
+}
+
+svg.icon > path{
+    fill: var(--color4);
+}
+div.row-icon > svg > path { 
+    stroke: black;
+}
+
+#title{
     display: flex;
+    text-align: center;
+    font-size: 4em;
     justify-content: center;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
+    column-gap: 10px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);;
+}
+.main-car-container{
+    display: flex;
 }
 nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
     position: fixed;
+    top: 2%;
+    background: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+#road{
+    position: relative;
+    transform: rotate(-90);
+    background:#7A7878;
+    width: 45px;
+    height: 1500px;
+   
+}
+.road-lines{
+    display: block;
+    position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    margin-left: 40%;
+    margin-right: 40%;
 }
-nav ul{
-    display: flex;
-    list-style: none;
-    padding: 0;
+.car{
+   
+    position: fixed;
 }
-nav ul li{
-    margin: 0 10px;
-    padding: 0;
-}
-nav ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-nav ul li a:hover{
-    color: rgb(82, 81, 81);
-}
-.landing{
+.row-1{
+    margin-left: 20%;
+    margin-right: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    margin-bottom: 5%;
 }
-.half{
-    width: 50%;
-    height: 100%;
+.main-container{
+    margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
-.half-pink{
-    background: rgb(255, 192, 197);
-}
-.half-green{
-    background: rgb(201, 238, 230);
-}
-.card{
+.row-2{
+    padding: 5%;
+    border-top: 1px solid white;
     display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 350px;
-    width: 800px;
-    border-radius: 15px;
-    box-shadow: 8px 8px 14px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 10%;
+    margin-right: 20%;
+    flex-direction: column;
 }
-.welcome{
-    position: absolute;
-    top: 80px;
-    left: 255px;
-    font-size: 20px;
-    color: white;
-    margin: 0;
+
+.row-title{
+    align-self: flex-start;
+    margin-left: 10%;
 }
+.row-text-row-icon{
+    display: inline-flex;
+}
+.row-text{
+    margin-left: 10%;
+    width: 65%;
+}
+div.row-icon > svg{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    align-self: center;
+    padding: 20%;
+    height: 80px;
+    width: 80px;
+}
+div.row-icon > #update{
+    width: 120px;
+    padding-left: 10%;
+}
+div.row-icon > #book #paint{
+    width: 90px;
+}
+#me{
+    height: 10em;
+    border-radius: 8%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#intro-text{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 2%; 
+    margin-left: 10%;
+    line-height: 12px;
+    min-width: 150px;
+}
+
+
+/*
+.color1-tile{
+    background-color: var(--color1);
+    width: 413px;
+    height: 158px;
+    border-radius: 8px;
+}
+
+.color2-tile{
+    background-color: white;
+    border-radius: 8px;
+    width: 413px;
+    height: 158px;
+}
+
 .title{
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
+    color: var(--color4);
 }
+.car{
+    width: 87.527px;
+    height: 43.118px;
+    transform: rotate(-90deg);
+    flex-shrink: 0;
+}
+*/
