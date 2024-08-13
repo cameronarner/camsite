@@ -3,18 +3,71 @@
     --color2: #D4C1F1;
     --color3: #5E29AD;
     --color4: #ADCEF9;
+    --hovercolor4: #6495ED;
+    --background1: url("mesh-gradient1.png");
     font-family: "Kaisei HarunoUmi";
     color: white;
 }
 body{
-    background-image: url("mesh-gradient1.png");
+    background-image: var(--background1);
 }
-
 svg.icon > path{
     fill: var(--color4);
 }
-div.row-icon > svg > path { 
-    stroke: black;
+.navbar-d-icon:hover >svg.icon > path{
+    fill: var(--hovercolor4);
+}
+
+.navbar-d-icon:last-child >.icon{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.navbar-d-icon:first-child > .icon{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.navbar-d-icon:hover >:first-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.navbar-d-icon:hover > p {
+    visibility: visible;
+    background-color: white;
+}
+
+.description{
+    color: var(--hovercolor4);
+    visibility: collapse;
+    margin-top:0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.navbar-icons{
+    display: flex;
+    padding: 5px;
+}
+.navbar-d-icon .icon{
+    background-color: white;
+    padding: 8px;
+}
+
+nav{
+    top:2%; 
+    position: fixed;
+}
+iframe{
+    visibility: hidden;
+    position: fixed;
+    top: 10%;
+    width: 25%;
+    height: 40%;
+  }
+.navbar-d-icon{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
 }
 
 #title{
@@ -28,14 +81,8 @@ div.row-icon > svg > path {
 .main-car-container{
     display: flex;
 }
-nav{
-    display: inline-flex;
-    position: fixed;
-    top: 2%;
-    background: white;
-    padding: 2px;
-    border-radius: 5px;
-}
+
+
 #road{
     position: relative;
     transform: rotate(-90);
@@ -54,6 +101,9 @@ nav{
 .car{
    
     position: fixed;
+}
+div.row-icon > svg > path { 
+    stroke: black;
 }
 .row-1{
     margin-left: 20%;
