@@ -1,3 +1,4 @@
+/*Global Styles*/
 :root{
     --color1: #D8FFF8;
     --color2: #D4C1F1;
@@ -7,13 +8,33 @@
     --background1: url("mesh-gradient1.png");
     font-family: "Kaisei HarunoUmi";
     color: white;
+    user-select: none;
 }
+
 body{
     background-image: var(--background1);
+    background-size: cover;
 }
 svg.icon > path{
     fill: var(--color4);
 }
+
+/*Nav*/
+nav{
+    top:2%; 
+    position: fixed;
+    z-index: 1;
+}
+
+.navbar-d-icon{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
 .navbar-d-icon:hover >svg.icon > path{
     fill: var(--hovercolor4);
 }
@@ -22,14 +43,17 @@ svg.icon > path{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .navbar-d-icon:first-child > .icon{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 .navbar-d-icon:hover >:first-child {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
 .navbar-d-icon:hover > p {
     visibility: visible;
     background-color: white;
@@ -42,18 +66,16 @@ svg.icon > path{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .navbar-icons{
     display: flex;
 }
+
 .navbar-d-icon > .icon{
     background-color: white;
     width: 100%;
 }
 
-nav{
-    top:2%; 
-    position: fixed;
-}
 iframe{
     visibility: hidden;
     position: fixed;
@@ -61,16 +83,10 @@ iframe{
     width: 25%;
     height: 40%;
     min-width: 250px;
+    z-index: 1;
   }
-.navbar-d-icon{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-}
 
+/*Header*/
 #title{
     margin-top: 10%;
     display: flex;
@@ -80,19 +96,32 @@ iframe{
     column-gap: 10px;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.25);;
 }
-.main-car-container{
-    display: flex;
+
+#me{
+    height: 10em;
+    border-radius: 8%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-
+/*Main Layout*/
+.main-container{
+    grid-column-start: 2;
+    justify-self: stretch;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+    /*Road*/
 #road{
+    grid-column-start: 3;
     position: relative;
     transform: rotate(-90);
     background:#7A7878;
     width: 45px;
     height: 1500px;
-   
 }
+
 .road-lines{
     display: block;
     position: absolute;
@@ -100,28 +129,56 @@ iframe{
     margin-left: 40%;
     margin-right: 40%;
 }
+
 .car{
-   
     position: fixed;
 }
-div.row-icon > svg > path { 
-    stroke: black;
-}
+
+    /*Rows*/ 
 .row-1{
-    margin-left: 20%;
-    margin-right: 20%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5%;
+    padding: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
-.main-container{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+
+#intro-text{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 2%; 
+    margin-left: 10%;
+    line-height: 12px;
+    width: 12 em;
+    min-width: 150px;
 }
+
+#color1-box{
+    z-index: -2;
+    position: absolute;
+    background-color: white;
+    width: 10em;
+    height: 10em;
+    border-radius: 8%;
+    right: 61%;
+    top: 30%;
+}
+
+#color2-box{
+    z-index: -1;
+    position: absolute;
+    background-color: var(--color4);
+    width: 10em;
+    height: 10em;
+    border-radius: 8%;
+    right: 59%;
+    top: 23%;
+}
+
 .row-2{
     padding: 5%;
     border-top: 1px solid white;
@@ -135,13 +192,16 @@ div.row-icon > svg > path {
     align-self: flex-start;
     margin-left: 10%;
 }
+
 .row-text-row-icon{
     display: inline-flex;
 }
+
 .row-text{
     margin-left: 10%;
     width: 65%;
 }
+
 div.row-icon > svg{
     margin-top: 15%;
     margin-bottom: 15%;
@@ -150,52 +210,62 @@ div.row-icon > svg{
     height: 80px;
     width: 80px;
 }
+
 div.row-icon > #update{
     width: 120px;
     padding-left: 10%;
 }
+
 div.row-icon > #book #paint{
     width: 90px;
 }
-#me{
-    height: 10em;
-    border-radius: 8%;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+div.row-icon > svg > path { 
+    stroke: black;
 }
 
-#intro-text{
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    padding: 2%; 
-    margin-left: 10%;
-    line-height: 12px;
-    min-width: 150px;
+/*Media Queries*/
+@media screen and (max-width: 505px){
+    .main-car-container{
+        padding: 0px;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 0% 95% 5%;
+        column-gap: 0px;
+    }
+    #title{
+        margin-top: 20%;
+    }
+    #color3-box{
+        z-index: -1;
+        position: absolute;
+        background-color: var(--color2);
+        height: 5em;
+        border-radius: 5px;
+        left: 64%;
+        top: 45%;
+        width: 9em;
+    }
 }
 
-
-/*
-.color1-tile{
-    background-color: var(--color1);
-    width: 413px;
-    height: 158px;
-    border-radius: 8px;
+@media screen and (min-width: 505px){
+    .main-car-container{
+        padding: 0px;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 10% 80% 10%;
+        column-gap: 0px;
+    }
+    #color3-box{
+        z-index: -1;
+        position: absolute;
+        background-color: var(--color2);
+        height: 5em;
+        border-radius: 5px;
+        left: 55%;
+        top: 45%;
+        width: 12em;
+    }
 }
-
-.color2-tile{
-    background-color: white;
-    border-radius: 8px;
-    width: 413px;
-    height: 158px;
-}
-
-.title{
-    color: var(--color4);
-}
-.car{
-    width: 87.527px;
-    height: 43.118px;
-    transform: rotate(-90deg);
-    flex-shrink: 0;
-}
-*/
