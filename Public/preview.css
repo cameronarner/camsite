@@ -1,0 +1,50 @@
+body {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.book {
+    position: relative;
+    perspective: 2000px;
+}
+
+#cover {
+    position: relative;
+    z-index: 2;
+    border: 1px solid black;
+    height: 60vh;
+    width: 50vh;
+    text-align: center;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    height: 60vh;
+    width: 50vh;
+    text-align: center;
+    background-color: rgb(127, 142, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-origin: left;
+    transition: transform 0.5s ease-in;
+}
