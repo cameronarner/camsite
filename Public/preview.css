@@ -1,3 +1,4 @@
+
 body {
     user-select: none;
     margin: 0;
@@ -12,12 +13,13 @@ body {
 .book {
     position: relative;
     perspective: 2000px;
+    transition: margin-left 0.5s ease-in-out;
 }
 
 #cover {
+    border-left: 1px solid black;
     position: relative;
     z-index: 2;
-    border: 1px solid black;
     height: 60vh;
     width: 50vh;
     text-align: center;
@@ -33,10 +35,10 @@ body {
 
 
 .page {
+    border-left: 2px solid grey;
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid black;
     height: 60vh;
     width: 50vh;
     text-align: center;
@@ -47,4 +49,22 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform-origin: left;
     transition: transform 0.5s ease-in;
+}
+
+#p1{
+    background-color: blueviolet;
+}
+#p2{
+    background-color: yellowgreen;
+}
+#p3{
+    background-color: pink;
+}
+
+#reset{
+    height: 5vh;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: var(--color1);
 }
