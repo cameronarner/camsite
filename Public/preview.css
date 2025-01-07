@@ -1,14 +1,101 @@
 
+/*
+-adjust theme thingy
+    -> house is not centered
+-add project photos
+-in figma: redesign navbar with a simpler solution
+-button to view projects
+*/
+
+:root{
+    --color1: #D8FFF8;
+    --color2: #D4C1F1;
+    --color3: #5E29AD;
+    --color4: #ADCEF9;
+    --hovercolor4: #6495ED;
+    font-family: "Kaisei HarunoUmi";
+    color: white;
+    user-select: none;
+}
 body {
     user-select: none;
-    margin: 0;
-    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: lightskyblue;
 }
+/*navbar*/
+svg.icon > path{
+    fill: var(--color4);
+}
+nav{   
+    top: 2%;
+    position: fixed;
+    z-index: 1;
+    left: 2%;
+}
+.navbar-d-icon{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-d-icon:hover >svg.icon > path{
+    fill: var(--hovercolor4);
+}
+
+.navbar-d-icon:hover > p {
+    visibility: visible;
+    background-color: white;
+}
+
+.description{
+    color: var(--hovercolor4);
+    visibility: collapse;
+    text-align: center;
+    width: 100%;
+    margin-top:0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar-icons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar-d-icon > .icon{
+    background-color: white;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+#house{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#paint{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+#house:hover{
+    border-bottom-left-radius: 0px;
+}
+#paint:hover{
+    border-bottom-right-radius: 0px;
+}
+iframe{
+    visibility: hidden;
+    position: fixed;
+    top: 15%;
+    width: 25%;
+    height: 40%;
+    min-width: 250px;
+    z-index: 1;
+    left: 2px;
+  }
 
 .book {
     position: relative;
@@ -23,7 +110,7 @@ body {
     height: 60vh;
     width: 50vh;
     text-align: center;
-    background-color: aquamarine;
+    background-color: var(--color2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,13 +139,13 @@ body {
 }
 
 #p1{
-    background-color: blueviolet;
+    background-color: var(--color3);
 }
 #p2{
-    background-color: yellowgreen;
+    background-color: var(--color4);
 }
 #p3{
-    background-color: pink;
+    background-color: var(--color2);
 }
 
 #reset{
@@ -66,5 +153,5 @@ body {
     margin-top: 10px;
     border-radius: 8px;
     padding: 5px;
-    background-color: var(--color1);
+    background-color: var(--color3);
 }
